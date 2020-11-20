@@ -39,6 +39,20 @@ class BottomNavigationBloc
           destination: allDestinations[this.currentIndex],
         );
       }
+      if (this.currentIndex == 2) {
+        int data = await _getBusinessPageData();
+        yield SchoolPageLoaded(
+          number: data,
+          destination: allDestinations[this.currentIndex],
+        );
+      }
+      if (this.currentIndex == 3) {
+        int data = await _getBusinessPageData();
+        yield FlightPageLoaded(
+          number: data,
+          destination: allDestinations[this.currentIndex],
+        );
+      }
     }
   }
 

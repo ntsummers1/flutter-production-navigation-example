@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_production_navigation_example/features/flight/presentation/pages/flight_page.dart';
 import 'package:flutter_production_navigation_example/features/home/presentation/pages/home_page.dart';
+import 'package:flutter_production_navigation_example/features/school/presentation/pages/school_page.dart';
 
 import 'bottom_navigation/bloc/bottom_navigation_bloc.dart';
 import 'bottom_navigation/destinations.dart';
@@ -39,6 +41,18 @@ class AppScreen extends StatelessWidget {
           }
           if (state is BusinessPageLoaded) {
             return BusinessPage(
+              number: state.number,
+              destination: state.destination,
+            );
+          }
+          if (state is SchoolPageLoaded) {
+            return SchoolPage(
+              number: state.number,
+              destination: state.destination,
+            );
+          }
+          if (state is FlightPageLoaded) {
+            return FlightPage(
               number: state.number,
               destination: state.destination,
             );

@@ -40,3 +40,23 @@ class BusinessPageLoaded extends BottomNavigationState {
   @override
   String toString() => 'BusinessPageLoaded with number: $number';
 }
+
+class SchoolPageLoaded extends BottomNavigationState {
+  final int number;
+  final TopLevelDestination destination;
+
+  SchoolPageLoaded({@required this.number, @required this.destination});
+
+  @override
+  String toString() => 'SchoolPageLoaded with number: $number';
+}
+
+class FlightPageLoaded extends BottomNavigationState {
+  final int number;
+  final TopLevelDestination destination;
+
+  FlightPageLoaded({@required this.number, @required this.destination});
+
+  @override
+  String toString() => 'FlightPageLoaded with number: $number';
+}
