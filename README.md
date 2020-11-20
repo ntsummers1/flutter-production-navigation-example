@@ -12,6 +12,10 @@ By doing this, we can have a complete and total understanding of how to properly
 
 # Setup
 - [Install Flutter](https://flutter.dev/docs/get-started/install)
-- To ensure code quality, Git Hooks and a Git Action have been setup. You can use the hooks I've created by running `git config core.hooksPath .github/hooks` in the project folder. When you commit and push anything, your code will be cleaned and tested automatically!
+- To ensure code quality, Git Hooks and a Git Action have been setup. You can use the hooks I've created by running 
+
+  `git config core.hooksPath .github/hooks` 
+
+  in the project folder. When you commit and push anything, your code will be cleaned and tested automatically!
 - Run the project!
 
