@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_production_navigation_example/features/home/presentation/pages/home_page.dart';
 
 import 'bottom_navigation/bloc/bottom_navigation_bloc.dart';
+import 'bottom_navigation/destinations.dart';
 import 'features/business/presentation/pages/business_page.dart';
 
 void main() {
@@ -45,16 +46,12 @@ class AppScreen extends StatelessWidget {
         return BottomNavigationBar(
           currentIndex:
               context.select((BottomNavigationBloc bloc) => bloc.currentIndex),
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.black),
-              label: 'First',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.all_inclusive, color: Colors.black),
-              label: 'Second',
-            ),
-          ],
+          items: allDestinations.map((Destination destination) {
+            return BottomNavigationBarItem(
+                icon: Icon(destination.icon),
+                backgroundColor: destination.color,
+                label: destination.title);
+          }).toList(),
           onTap: (index) => context
               .read<BottomNavigationBloc>()
               .add(PageTapped(index: index)),
