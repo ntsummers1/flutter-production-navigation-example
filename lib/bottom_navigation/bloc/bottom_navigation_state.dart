@@ -23,8 +23,9 @@ class PageLoading extends BottomNavigationState {
 
 class HomePageLoaded extends BottomNavigationState {
   final String text;
+  final TopLevelDestination destination;
 
-  HomePageLoaded({@required this.text});
+  HomePageLoaded({@required this.text, @required this.destination});
 
   @override
   String toString() => 'HomePageLoaded with text: $text';
@@ -32,8 +33,9 @@ class HomePageLoaded extends BottomNavigationState {
 
 class BusinessPageLoaded extends BottomNavigationState {
   final int number;
+  final TopLevelDestination destination;
 
-  BusinessPageLoaded({@required this.number});
+  BusinessPageLoaded({@required this.number, @required this.destination});
 
   @override
   String toString() => 'BusinessPageLoaded with number: $number';

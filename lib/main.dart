@@ -32,10 +32,16 @@ class AppScreen extends StatelessWidget {
             return Center(child: CircularProgressIndicator());
           }
           if (state is HomePageLoaded) {
-            return HomePage(text: state.text);
+            return HomePage(
+              text: state.text,
+              destination: state.destination,
+            );
           }
           if (state is BusinessPageLoaded) {
-            return BusinessPage(number: state.number);
+            return BusinessPage(
+              number: state.number,
+              destination: state.destination,
+            );
           }
           return Container();
         },
@@ -46,7 +52,7 @@ class AppScreen extends StatelessWidget {
         return BottomNavigationBar(
           currentIndex:
               context.select((BottomNavigationBloc bloc) => bloc.currentIndex),
-          items: allDestinations.map((Destination destination) {
+          items: allDestinations.map((TopLevelDestination destination) {
             return BottomNavigationBarItem(
                 icon: Icon(destination.icon),
                 backgroundColor: destination.color,

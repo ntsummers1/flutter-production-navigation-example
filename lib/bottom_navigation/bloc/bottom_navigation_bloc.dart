@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_production_navigation_example/bottom_navigation/destinations.dart';
 import 'package:meta/meta.dart';
 
 part 'bottom_navigation_event.dart';
@@ -26,11 +27,17 @@ class BottomNavigationBloc
 
       if (this.currentIndex == 0) {
         String data = await _getHomePageData();
-        yield HomePageLoaded(text: data);
+        yield HomePageLoaded(
+          text: data,
+          destination: allDestinations[this.currentIndex],
+        );
       }
       if (this.currentIndex == 1) {
         int data = await _getBusinessPageData();
-        yield BusinessPageLoaded(number: data);
+        yield BusinessPageLoaded(
+          number: data,
+          destination: allDestinations[this.currentIndex],
+        );
       }
     }
   }
