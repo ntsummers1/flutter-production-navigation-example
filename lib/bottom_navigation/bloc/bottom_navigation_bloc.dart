@@ -22,47 +22,28 @@ class BottomNavigationBloc
     }
     if (event is PageTapped) {
       this.currentIndex = event.index;
-      yield CurrentIndexChanged(currentIndex: this.currentIndex);
       yield PageLoading();
 
       if (this.currentIndex == 0) {
-        String data = await _getHomePageData();
         yield HomePageLoaded(
-          text: data,
           destination: allDestinations[this.currentIndex],
         );
       }
       if (this.currentIndex == 1) {
-        int data = await _getBusinessPageData();
         yield BusinessPageLoaded(
-          number: data,
           destination: allDestinations[this.currentIndex],
         );
       }
       if (this.currentIndex == 2) {
-        int data = await _getBusinessPageData();
         yield SchoolPageLoaded(
-          number: data,
           destination: allDestinations[this.currentIndex],
         );
       }
       if (this.currentIndex == 3) {
-        int data = await _getBusinessPageData();
         yield FlightPageLoaded(
-          number: data,
           destination: allDestinations[this.currentIndex],
         );
       }
     }
-  }
-
-  Future<String> _getHomePageData() async {
-    String data = "First Page";
-    return data;
-  }
-
-  Future<int> _getBusinessPageData() async {
-    int data = 2;
-    return data;
   }
 }

@@ -35,25 +35,21 @@ class AppScreen extends StatelessWidget {
           }
           if (state is HomePageLoaded) {
             return HomePage(
-              text: state.text,
               destination: state.destination,
             );
           }
           if (state is BusinessPageLoaded) {
             return BusinessPage(
-              number: state.number,
               destination: state.destination,
             );
           }
           if (state is SchoolPageLoaded) {
             return SchoolPage(
-              number: state.number,
               destination: state.destination,
             );
           }
           if (state is FlightPageLoaded) {
             return FlightPage(
-              number: state.number,
               destination: state.destination,
             );
           }

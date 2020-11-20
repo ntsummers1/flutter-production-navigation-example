@@ -7,56 +7,43 @@ abstract class BottomNavigationState extends Equatable {
   List<Object> get props => [];
 }
 
-class CurrentIndexChanged extends BottomNavigationState {
-  final int currentIndex;
-
-  CurrentIndexChanged({@required this.currentIndex});
-
-  @override
-  String toString() => 'CurrentIndexChanged to $currentIndex';
-}
-
 class PageLoading extends BottomNavigationState {
   @override
   String toString() => 'PageLoading';
 }
 
 class HomePageLoaded extends BottomNavigationState {
-  final String text;
   final TopLevelDestination destination;
 
-  HomePageLoaded({@required this.text, @required this.destination});
+  HomePageLoaded({@required this.destination});
 
   @override
-  String toString() => 'HomePageLoaded with text: $text';
+  String toString() => 'HomePageLoaded';
 }
 
 class BusinessPageLoaded extends BottomNavigationState {
-  final int number;
   final TopLevelDestination destination;
 
-  BusinessPageLoaded({@required this.number, @required this.destination});
+  BusinessPageLoaded({@required this.destination});
 
   @override
-  String toString() => 'BusinessPageLoaded with number: $number';
+  String toString() => 'BusinessPageLoaded';
 }
 
 class SchoolPageLoaded extends BottomNavigationState {
-  final int number;
   final TopLevelDestination destination;
 
-  SchoolPageLoaded({@required this.number, @required this.destination});
+  SchoolPageLoaded({@required this.destination});
 
   @override
-  String toString() => 'SchoolPageLoaded with number: $number';
+  String toString() => 'SchoolPageLoaded';
 }
 
 class FlightPageLoaded extends BottomNavigationState {
-  final int number;
   final TopLevelDestination destination;
 
-  FlightPageLoaded({@required this.number, @required this.destination});
+  FlightPageLoaded({@required this.destination});
 
   @override
-  String toString() => 'FlightPageLoaded with number: $number';
+  String toString() => 'FlightPageLoaded';
 }

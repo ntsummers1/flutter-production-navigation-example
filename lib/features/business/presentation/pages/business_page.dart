@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_production_navigation_example/bottom_navigation/destinations.dart';
 
 class BusinessPage extends StatelessWidget {
-  final int number;
   final TopLevelDestination destination;
 
-  BusinessPage({this.number, this.destination}) : super();
+  BusinessPage({this.destination}) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class BusinessPage extends StatelessWidget {
         backgroundColor: destination.color,
       ),
       body: Center(
-        child: Text('My number is: $number'),
+        child: Text(''),
       ),
     );
   }
