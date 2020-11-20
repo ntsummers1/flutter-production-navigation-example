@@ -6,3 +6,8 @@ abstract class HomeEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class HomeStarted extends HomeEvent {
+  @override
+  String toString() => 'HomeStarted';
+}

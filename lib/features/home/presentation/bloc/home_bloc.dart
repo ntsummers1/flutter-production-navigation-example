@@ -7,12 +7,21 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(HomeInitial());
+  HomeBloc() : super(HomeLoading());
 
   @override
   Stream<HomeState> mapEventToState(
     HomeEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    if (event is HomeStarted) {
+      yield HomeLoading();
+      await _getFirstPageData();
+      yield HomePageLoaded();
+    }
+  }
+
+  Future<String> _getFirstPageData() async {
+    String data = "Hello!";
+    return data;
   }
 }

@@ -9,8 +9,8 @@ class TopLevelDestination {
 }
 
 const List<TopLevelDestination> allDestinations = <TopLevelDestination>[
-  TopLevelDestination(0, 'Home', Icons.home, Colors.teal),
-  TopLevelDestination(1, 'Business', Icons.business, Colors.cyan),
-  TopLevelDestination(2, 'School', Icons.school, Colors.orange),
-  TopLevelDestination(3, 'Flight', Icons.flight, Colors.blue)
+  TopLevelDestination(0, 'Home', Icons.home, Colors.lightGreen),
+  TopLevelDestination(1, 'Business', Icons.business, Colors.lightGreen),
+  TopLevelDestination(2, 'School', Icons.school, Colors.lightGreen),
+  TopLevelDestination(3, 'Flight', Icons.flight, Colors.lightGreen)
 ];
